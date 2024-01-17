@@ -1,0 +1,33 @@
+.photo-card-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.photo-card-container button {
+    height: 20px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.photo-card-container img {
+    border-radius: 5px;
+}
+
+.photo-card-info {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 180 px;
+}
+
+.photo-card-caption {
+    width: 205px;
+    word-break: normal;
+    overflow: auto;
+}

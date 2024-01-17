@@ -1,0 +1,37 @@
+.form-div {
+    border: 2px solid black;
+    margin: 10px 10px 10px 0px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form  input {
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.button-div {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: center;
+}
+
+.form-button {
+    margin-right: 10px;
+}
+
+.error-banner {
+    width: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px 10px 10px 0px;
+    padding: 2px 2px 2px 0px;
+    border: 1px solid rgba(153, 0, 0, 1.0);
+    border-radius: 5px;
+    background-color: rgba(153, 0, 0, 0.3);
+}
