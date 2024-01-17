@@ -94,13 +94,26 @@ const InputForm = (props) => {
                     </button>
                     <button 
                         className="form-button" 
-                        onClick={ () => props.showInput(false)}
+                        onClick={ () => props.showInput(false) }
                     >
                         Cancel
                     </button>
                 </div>
                 { invalidInput && <ErrorBanner /> }
             </form>
+        </div>
+    )
+}
+
+// photo card
+const PhotoCard = (props) => {
+    return (
+        <div className="photo-card-container">
+            <img src={ props.imgData.url } height="300" width="250" alt={ props.imgData.caption }/>
+            <div className="photo-card-info">
+                <button onClick={ () => props.delete(props.imgData.id) }>x</button>
+                <span className="photo-card-caption">{ props.imgData.caption }</span>
+            </div>
         </div>
     )
 }
@@ -122,15 +135,26 @@ const App = () => {
         )
     }
 
+    const deleteFromInputList = (id) => {
+        const updatedList = inputList.filter((elem) => elem.id !== id)
+        setInputList(updatedList)
+    }
+
     return (
         <div className="app-div">
             <div className="input-dialog">
                 <Dialog updateInputList={ updateInputList } />
             </div>
-            <div className='temp-div'>
-                <ul>
-                    { inputList.map(elem => <li key={ elem.id }>{elem.url}, {elem.caption}</li>) }
-                </ul>
+            <div className='photo-grid'>
+                { 
+                    inputList.map(elem => 
+                        <PhotoCard 
+                            key={ elem.id } 
+                            imgData={ elem }
+                            delete={ deleteFromInputList }
+                        /> 
+                    ) 
+                }
             </div>
         </div>
     )
